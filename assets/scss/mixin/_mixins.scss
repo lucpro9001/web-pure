@@ -1,0 +1,12 @@
+@mixin col($size) {
+    @for $i from 1 through 12 {
+        .col-#{$size}-#{$i} {
+            width: percentage(calc(1/calc(12/$i)));
+        }
+    }
+}
+
+@mixin center($w) {
+    width: $w;
+    margin: 0 auto;
+}

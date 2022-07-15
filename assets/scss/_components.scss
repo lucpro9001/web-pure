@@ -1,0 +1,37 @@
+@import './mixin/_mixins';
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.justify-content-around {
+    justify-content: space-around;
+}
+
+.justify-content-start {
+    justify-content: start;
+}
+
+.justify-content-end {
+    justify-content: end;
+}
+
+.container {
+    @include center(80%);
+}
+
+.nav {
+    @extend .d-flex;
+    overflow: hidden;
+}
+
+.nav-end {
+    @extend .justify-content-end;
+}
+
+.nav-start {
+    @extend .justify-content-start;
+}

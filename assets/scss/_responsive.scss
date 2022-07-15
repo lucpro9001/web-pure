@@ -1,0 +1,20 @@
+@import './mixin/_mixins';
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    width: 100%;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+$size: (sm: 576px, md: 768px, lg: 992px, xl: 1200px);
+@each $name,
+$val in $size {
+    @media only screen and (min-width: $val) {
+        @include col($name)
+    }
+}
