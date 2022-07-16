@@ -1,4 +1,12 @@
 @import './mixin/_mixins';
+a,
+ul,
+li,
+ol {
+    list-style: none;
+    text-decoration: none;
+}
+
 .d-flex {
     display: flex;
 }
@@ -23,15 +31,79 @@
     @include center(80%);
 }
 
-.nav {
-    @extend .d-flex;
-    overflow: hidden;
+$size: 15px;
+@for $i from 1 to 5 {
+    $size: $size + 5px;
+    .fs-#{$i} {
+        font-size: $size;
+    }
 }
 
-.nav-end {
-    @extend .justify-content-end;
+.bg-tranparent {
+    background-color: transparent !important;
 }
 
-.nav-start {
-    @extend .justify-content-start;
+.bg-white {
+    background-color: aliceblue;
+}
+
+.bg-black {
+    background-color: rgb(44, 44, 44);
+}
+
+main {
+    margin-left: 6rem;
+    padding: 1rem;
+}
+
+.navbar {
+    transition: .2s;
+    padding-top: 30px;
+    height: 100vh;
+    position: fixed;
+    width: 6rem;
+    // background-color: #D9AFD9;
+    // background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+    background-color: #1a1919;
+}
+
+.active {
+    background-color: black;
+    border: 6px solid white;
+    color: white !important;
+    transition: all .5s ease;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: rgb(114, 114, 114);
+    transition: .5s;
+    &:hover {
+        color: white;
+        transition: .5s;
+    }
+    margin: 10px;
+    text-align: center;
+    border-radius: 18px;
+    padding: 15px 5px;
+}
+
+@media only screen and (max-width: 768px) {
+    main {
+        margin: 10px;
+    }
+    .navbar {
+        padding: 0 10px;
+        height: 6rem;
+        width: 100vw;
+        bottom: 0;
+    }
+    .navbar-nav {
+        margin: 0 auto;
+        text-align: center;
+    }
+    .nav-item {
+        display: inline-block;
+        padding: 15px;
+    }
 }
