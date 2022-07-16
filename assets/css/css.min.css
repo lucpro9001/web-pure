@@ -168,6 +168,10 @@
     width: 100%;
   }
 }
+html {
+  scroll-behavior: smooth !important;
+}
+
 a,
 ul,
 li,
@@ -247,7 +251,7 @@ main {
   background-color: black;
   border: 6px solid white;
   color: white !important;
-  transition: all 0.5s ease;
+  transition: 0.5s;
 }
 
 .nav-item {
@@ -291,6 +295,9 @@ main {
     display: inline-block;
     padding: 15px;
   }
+}
+.sec {
+  height: 100vh;
 }
 
 /*# sourceMappingURL=css.min.css.map */
