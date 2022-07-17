@@ -206,19 +206,19 @@ ol {
 }
 
 .fs-1 {
-  font-size: 20px;
+  font-size: 13px;
 }
 
 .fs-2 {
-  font-size: 25px;
+  font-size: 18px;
 }
 
 .fs-3 {
-  font-size: 30px;
+  font-size: 23px;
 }
 
 .fs-4 {
-  font-size: 35px;
+  font-size: 28px;
 }
 
 .bg-tranparent {
@@ -252,6 +252,7 @@ main {
   border: 6px solid white;
   color: white !important;
   transition: 0.5s;
+  font-size: 30px;
 }
 
 .nav-item {
@@ -269,7 +270,7 @@ main {
 }
 
 ::-webkit-scrollbar {
-  width: 3px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -289,11 +290,15 @@ main {
   .navbar-nav {
     margin: 0 auto;
     text-align: center;
-    font-size: 7px;
+    font-size: 10px;
   }
   .nav-item {
     display: inline-block;
     padding: 15px;
+  }
+  .active {
+    font-size: 15px;
+    border: 3px solid white;
   }
 }
 .sec {
