@@ -57,11 +57,11 @@ $size: 8px;
 
 main {
     margin-left: 6rem;
-    padding: 1rem;
 }
 
 .navbar {
     transition: .2s;
+    z-index: 999;
     padding-top: 30px;
     height: 100vh;
     position: fixed;
@@ -102,9 +102,6 @@ main {
 }
 
 @media only screen and (max-width: 576px) {
-    main {
-        margin: 10px;
-    }
     .navbar {
         padding: 0 10px;
         height: 5rem;
@@ -125,8 +122,72 @@ main {
         font-size: 15px;
         border: 3px solid white;
     }
+    main {
+        margin: 0;
+    }
 }
 
 .sec {
     height: 100vh;
+}
+
+.slider {
+    display: flex;
+    overflow: hidden;
+}
+
+.slide img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.slide {
+    display: none;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 50px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+
+/* Position the "next button" to the right */
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+
+/* On hover, add a black background color with a little bit see-through */
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
 }
