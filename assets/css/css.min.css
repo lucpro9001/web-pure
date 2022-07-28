@@ -209,16 +209,80 @@ ol {
   font-size: 13px;
 }
 
+.p-1 {
+  padding: 13px;
+}
+
+.pt-1 {
+  padding-top: 13px;
+}
+
+.m-1 {
+  margin: 13px;
+}
+
+.mt-1 {
+  margin-top: 13px;
+}
+
 .fs-2 {
   font-size: 18px;
+}
+
+.p-2 {
+  padding: 18px;
+}
+
+.pt-2 {
+  padding-top: 18px;
+}
+
+.m-2 {
+  margin: 18px;
+}
+
+.mt-2 {
+  margin-top: 18px;
 }
 
 .fs-3 {
   font-size: 23px;
 }
 
+.p-3 {
+  padding: 23px;
+}
+
+.pt-3 {
+  padding-top: 23px;
+}
+
+.m-3 {
+  margin: 23px;
+}
+
+.mt-3 {
+  margin-top: 23px;
+}
+
 .fs-4 {
   font-size: 28px;
+}
+
+.p-4 {
+  padding: 28px;
+}
+
+.pt-4 {
+  padding-top: 28px;
+}
+
+.m-4 {
+  margin: 28px;
+}
+
+.mt-4 {
+  margin-top: 28px;
 }
 
 .bg-tranparent {
@@ -235,6 +299,7 @@ ol {
 
 main {
   margin-left: 6rem;
+  overflow: hidden;
 }
 
 .navbar {
@@ -275,6 +340,10 @@ main {
 
 ::-webkit-scrollbar-thumb {
   background: black;
+}
+
+.text-center {
+  text-align: center;
 }
 
 @media only screen and (max-width: 576px) {
@@ -354,6 +423,10 @@ main {
   animation-duration: 1.5s;
 }
 
+.contact-info p {
+  font-size: 18px;
+}
+
 @keyframes fade {
   from {
     opacity: 0.4;
@@ -361,6 +434,84 @@ main {
   to {
     opacity: 1;
   }
+}
+.appear {
+  animation-name: appear;
+  animation-duration: 2s;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0.4;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+[data-appear=true] {
+  visibility: hidden;
+}
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.4s;
+  font-size: 1rem;
+  color: #11998e;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
+.form_control {
+  width: 70%;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=css.min.css.map */

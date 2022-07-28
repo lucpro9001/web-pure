@@ -51,7 +51,7 @@
             </div>
 
         </div>
-        <div class="sec" id="project">
+        <div class="sec" id="project" data-appear="true">
             <h1>Projects</h1>
             <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, facere. Omnis aspernatur voluptas perferendis temporibus, modi dicta non debitis laboriosam illum, deserunt velit voluptates eveniet exercitationem necessitatibus dolore. Similique,
                 amet!
@@ -59,11 +59,47 @@
             </h1>
         </div>
         <div class="sec" id="contact">
-            <h1>Contacts</h1>
-            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, facere. Omnis aspernatur voluptas perferendis temporibus, modi dicta non debitis laboriosam illum, deserunt velit voluptates eveniet exercitationem necessitatibus dolore. Similique,
-                amet!
+            <h1 class="text-center">Contacts</h1>
+            <br>
+            <div class="row">
+                <div class="col-md-4 text-center mt-3" data-appear="true">
+                    <div class="contact-info">
+                        <h2>
+                            Address:
+                        </h2>
+                        <p>
+                            Nha Trang
+                        </p>
+                    </div>
+                    <div class="contact-info">
+                        <h2>
+                            Call me:
+                        </h2>
+                        <p>
+                            0522 783 474
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-8" data-appear="true">
+                    <form class="form_control" action="#">
+                        <div class="form__group field">
+                            <input type="input" class="form__field" placeholder="Name" id='gmail' required />
+                            <label for="gmail" class="form__label">Gmail</label>
+                        </div>
 
-            </h1>
+                        <div class="form__group field">
+                            <input type="input" class="form__field" placeholder="Name" id='phone' required />
+                            <label for="phone" class="form__label">Phone</label>
+                        </div>
+
+                        <div class="form__group field">
+                            <textarea class="form__field" rows="5" id="message" required> </textarea>
+
+                            <label for="message" class="form__label">Message</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </main>
 

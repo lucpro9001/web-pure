@@ -8,6 +8,7 @@ var $$ = function(selector) {
 
 let sections = $$('.sec');
 let lists = $$('.nav-item');
+let appears = $$('[data-appear="true"]');
 
 function activeLink(nav_item) {
     lists.forEach((item) => item.classList.remove('active'));
@@ -23,7 +24,17 @@ window.onscroll = () => {
             const target = $(`[href='#${id}']`).firstElementChild;
             activeLink(target);
         }
-    })
+    });
+    appears.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop;
+        let h = screen.height;
+        if (offset < top + h - 300 && offset >= top) {
+            sec.classList.add('appear');
+            sec.style.visibility = 'visible';
+            return;
+        }
+    });
 };
 
 let slideIndex = 1;

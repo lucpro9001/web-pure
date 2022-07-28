@@ -1,4 +1,8 @@
 @import './mixin/_mixins';
+$primary: #11998e;
+$secondary: #38ef7d;
+$white: #fff;
+$gray: #9b9b9b;
 html {
     scroll-behavior: smooth !important;
 }
@@ -41,6 +45,18 @@ $size: 8px;
     .fs-#{$i} {
         font-size: $size;
     }
+    .p-#{$i} {
+        padding: $size;
+    }
+    .pt-#{$i} {
+        padding-top: $size;
+    }
+    .m-#{$i} {
+        margin: $size;
+    }
+    .mt-#{$i} {
+        margin-top: $size;
+    }
 }
 
 .bg-tranparent {
@@ -57,6 +73,7 @@ $size: 8px;
 
 main {
     margin-left: 6rem;
+    overflow: hidden;
 }
 
 .navbar {
@@ -99,6 +116,10 @@ main {
 
 ::-webkit-scrollbar-thumb {
     background: black;
+}
+
+.text-center {
+    text-align: center;
 }
 
 @media only screen and (max-width: 576px) {
@@ -183,6 +204,10 @@ main {
     animation-duration: 1.5s;
 }
 
+.contact-info p {
+    font-size: 18px;
+}
+
 @keyframes fade {
     from {
         opacity: .4
@@ -190,4 +215,89 @@ main {
     to {
         opacity: 1
     }
+}
+
+.appear {
+    animation-name: appear;
+    animation-duration: 2s;
+}
+
+@keyframes appear {
+    from {
+        opacity: .4;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+[data-appear="true"] {
+    visibility: hidden;
+}
+
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+}
+
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid $gray;
+    outline: 0;
+    font-size: 1.3rem;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    &::placeholder {
+        color: transparent;
+    }
+    &:placeholder-shown~.form__label {
+        font-size: 1.3rem;
+        cursor: text;
+        top: 20px;
+    }
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $gray;
+}
+
+.form__field:focus {
+    ~.form__label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.4s;
+        font-size: 1rem;
+        color: $primary;
+        font-weight: 700;
+    }
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, $primary, $secondary);
+    border-image-slice: 1;
+}
+
+
+/* reset input */
+
+.form__field {
+    &:required,
+    &:invalid {
+        box-shadow: none;
+    }
+}
+
+.form_control {
+    width: 70%;
+    margin: 0 auto;
 }
