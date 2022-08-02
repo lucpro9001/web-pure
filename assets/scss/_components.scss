@@ -1,5 +1,5 @@
 @import './mixin/_mixins';
-$primary: #11998e;
+$primary: #007bff;
 $secondary: #38ef7d;
 $white: #fff;
 $gray: #9b9b9b;
@@ -13,6 +13,10 @@ li,
 ol {
     list-style: none;
     text-decoration: none;
+}
+
+textarea {
+    resize: vertical;
 }
 
 .d-flex {
@@ -49,13 +53,13 @@ $size: 8px;
         padding: $size;
     }
     .pt-#{$i} {
-        padding-top: $size;
+        padding-block-start: $size;
     }
     .m-#{$i} {
         margin: $size;
     }
     .mt-#{$i} {
-        margin-top: $size;
+        margin-block-start: $size;
     }
 }
 
@@ -72,17 +76,17 @@ $size: 8px;
 }
 
 main {
-    margin-left: 6rem;
+    margin-inline-start: 6rem;
     overflow: hidden;
 }
 
 .navbar {
     transition: .2s;
     z-index: 999;
-    padding-top: 30px;
-    height: 100vh;
+    padding-block-start: 30px;
+    block-size: 100vh;
     position: fixed;
-    width: 6rem;
+    inline-size: 6rem;
     // background-color: #D9AFD9;
     // background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
     background-color: #1a1919;
@@ -111,7 +115,7 @@ main {
 }
 
 ::-webkit-scrollbar {
-    width: 4px;
+    inline-size: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -122,12 +126,12 @@ main {
     text-align: center;
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-inline-size: 576px) {
     .navbar {
         padding: 0 10px;
-        height: 5rem;
-        width: 100vw;
-        bottom: 0;
+        block-size: 5rem;
+        inline-size: 100vw;
+        inset-block-end: 0;
         border-radius: 25px 25px 0 0;
     }
     .navbar-nav {
@@ -149,7 +153,7 @@ main {
 }
 
 .sec {
-    height: 100vh;
+    block-size: 100vh;
 }
 
 .slider {
@@ -158,8 +162,8 @@ main {
 }
 
 .slide img {
-    width: 100%;
-    height: 100vh;
+    inline-size: 100%;
+    block-size: 100vh;
     object-fit: cover;
 }
 
@@ -171,9 +175,9 @@ main {
 .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
+    inset-block-start: 50%;
+    inline-size: auto;
+    margin-block-start: -22px;
     padding: 16px;
     color: white;
     font-weight: bold;
@@ -187,7 +191,7 @@ main {
 /* Position the "next button" to the right */
 
 .next {
-    right: 0;
+    inset-inline-end: 0;
     border-radius: 3px 0 0 3px;
 }
 
@@ -224,7 +228,7 @@ main {
 
 @keyframes appear {
     from {
-        opacity: .4;
+        opacity: .3;
         transform: translateX(100px);
     }
     to {
@@ -236,68 +240,46 @@ main {
     visibility: hidden;
 }
 
-.form__group {
-    position: relative;
-    padding: 15px 0 0;
-}
-
-.form__field {
-    font-family: inherit;
-    width: 100%;
-    border: 0;
-    border-bottom: 2px solid $gray;
-    outline: 0;
-    font-size: 1.3rem;
-    padding: 7px 0;
-    background: transparent;
-    transition: border-color 0.2s;
-    &::placeholder {
-        color: transparent;
-    }
-    &:placeholder-shown~.form__label {
-        font-size: 1.3rem;
-        cursor: text;
-        top: 20px;
-    }
-}
-
-.form__label {
-    position: absolute;
-    top: 0;
-    display: block;
-    transition: 0.2s;
-    font-size: 1rem;
-    color: $gray;
-}
-
-.form__field:focus {
-    ~.form__label {
-        position: absolute;
-        top: 0;
-        display: block;
-        transition: 0.4s;
-        font-size: 1rem;
-        color: $primary;
-        font-weight: 700;
-    }
-    padding-bottom: 6px;
-    font-weight: 700;
-    border-width: 3px;
-    border-image: linear-gradient(to right, $primary, $secondary);
-    border-image-slice: 1;
-}
-
-
-/* reset input */
-
-.form__field {
-    &:required,
-    &:invalid {
-        box-shadow: none;
-    }
-}
-
 .form_control {
-    width: 70%;
+    inline-size: 80%;
     margin: 0 auto;
+    .form_field {
+        inline-size: 100%;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 5px;
+        outline: none;
+        border: solid 2px $gray;
+    }
+    input.form_field {
+        &:focus {
+            border: solid 2px $primary;
+            &~.form_label {
+                bottom: 55px;
+                transition: .5s;
+                background-color: white;
+                font-size: 20px;
+                color: $primary;
+            }
+        }
+    }
+    textarea.form_field {
+        &:focus {
+            border: solid 2px $primary;
+            &~.form_label {
+                top: -20px;
+                transition: .5s;
+                background-color: white;
+                font-size: 20px;
+                color: $primary;
+            }
+        }
+    }
+    .form_label {
+        padding: 0 5px;
+        transition: .5s;
+        position: relative;
+        inset-block-end: 32px;
+        inset-inline-start: 20px;
+    }
 }
