@@ -491,10 +491,16 @@ main {
 }
 .form_control .form_label {
   padding: 0 5px;
-  transition: 0.5s;
+  transition: 0.2s;
   position: relative;
   inset-block-end: 32px;
   inset-inline-start: 20px;
+  color: #9b9b9b;
+}
+
+input,
+textarea {
+  text-align: center;
 }
 
 /*# sourceMappingURL=css.min.css.map */

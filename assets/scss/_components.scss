@@ -277,9 +277,15 @@ main {
     }
     .form_label {
         padding: 0 5px;
-        transition: .5s;
+        transition: .2s;
         position: relative;
         inset-block-end: 32px;
         inset-inline-start: 20px;
+        color: $gray;
     }
+}
+
+input,
+textarea {
+    text-align: center;
 }

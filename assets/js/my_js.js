@@ -60,3 +60,20 @@ function showSlides(n) {
     }
     slides[slideIndex - 1].style.display = 'block';
 }
+
+var form_field = $$('.form_field');
+
+form_field.forEach(
+    e => {
+        e.addEventListener('focus', (event) => {
+            event.target.nextElementSibling.style.visibility = 'visible';
+        });
+        e.addEventListener('blur', (event) => {
+            if (event.target.value.length == 0) {
+                event.target.nextElementSibling.style.visibility = 'visible';
+            } else {
+                event.target.nextElementSibling.style.visibility = 'hidden';
+            }
+        });
+    }
+);
