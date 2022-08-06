@@ -44,7 +44,7 @@ textarea {
 }
 
 $size: 8px;
-@for $i from 1 to 5 {
+@for $i from 1 to 6 {
     $size: $size + 5px;
     .fs-#{$i} {
         font-size: $size;
@@ -124,32 +124,6 @@ main {
 
 .text-center {
     text-align: center;
-}
-
-@media only screen and (max-inline-size: 576px) {
-    .navbar {
-        padding: 0 10px;
-        block-size: 5rem;
-        inline-size: 100vw;
-        inset-block-end: 0;
-        border-radius: 25px 25px 0 0;
-    }
-    .navbar-nav {
-        margin: 0 auto;
-        text-align: center;
-        font-size: 10px;
-    }
-    .nav-item {
-        display: inline-block;
-        padding: 15px;
-    }
-    .active {
-        font-size: 15px;
-        border: 3px solid white;
-    }
-    main {
-        margin: 0;
-    }
 }
 
 .sec {
@@ -241,8 +215,11 @@ main {
 }
 
 .form_control {
-    inline-size: 80%;
     margin: 0 auto;
+    .form_group {
+        position: relative;
+        margin: 10px 0;
+    }
     .form_field {
         inline-size: 100%;
         padding: 10px;
@@ -251,41 +228,94 @@ main {
         outline: none;
         border: solid 2px $gray;
     }
-    input.form_field {
+    .form_field {
         &:focus {
             border: solid 2px $primary;
             &~.form_label {
-                bottom: 55px;
+                top: -5px;
                 transition: .5s;
                 background-color: white;
                 font-size: 20px;
                 color: $primary;
-            }
-        }
-    }
-    textarea.form_field {
-        &:focus {
-            border: solid 2px $primary;
-            &~.form_label {
-                top: -20px;
-                transition: .5s;
-                background-color: white;
-                font-size: 20px;
-                color: $primary;
+                font-weight: bold;
             }
         }
     }
     .form_label {
         padding: 0 5px;
         transition: .2s;
-        position: relative;
-        inset-block-end: 32px;
-        inset-inline-start: 20px;
+        position: absolute;
         color: $gray;
+        z-index: 999;
+        top: 10px;
+        left: 12px;
     }
+}
+
+.form__label {
+    position: absolute;
+    top: 5px;
 }
 
 input,
 textarea {
     text-align: center;
+}
+
+.card {
+    overflow: hidden;
+    max-width: 320px;
+    padding: 8px;
+    position: relative;
+    img {
+        max-width: 100%;
+        transition: transform .8s;
+    }
+    .card_content {
+        color: white;
+        font-weight: 900;
+        padding-top: 8%;
+        width: 85%;
+        min-height: 75%;
+        position: absolute;
+        left: 50%;
+        top: 80px;
+        transform: translateX(-50%);
+        text-align: center;
+        z-index: 999;
+        font-size: 50px;
+        transition: 0.5s;
+        &:hover {
+            border: solid 5px white;
+            border-radius: 8px;
+            transition: 1s;
+            top: 20px;
+        }
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .navbar {
+        padding: 0 10px;
+        block-size: 5rem;
+        inline-size: 100vw;
+        inset-block-end: 0;
+        border-radius: 25px 25px 0 0;
+    }
+    .navbar-nav {
+        margin: 0 auto;
+        text-align: center;
+        font-size: 10px;
+    }
+    .nav-item {
+        display: inline-block;
+        padding: 15px;
+    }
+    .active {
+        font-size: 15px;
+        border: 3px solid white;
+    }
+    main {
+        margin: 0;
+    }
 }
