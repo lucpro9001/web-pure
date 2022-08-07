@@ -499,6 +499,8 @@ textarea {
 }
 
 .card {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  border-radius: 10px;
   overflow: hidden;
   max-width: 320px;
   padding: 8px;
@@ -506,14 +508,12 @@ textarea {
 }
 .card img {
   max-width: 100%;
-  transition: transform 0.8s;
+  transition: transform 0.5s;
 }
 .card .card_content {
+  text-transform: uppercase;
   color: white;
   font-weight: 900;
-  padding-top: 8%;
-  width: 85%;
-  min-height: 75%;
   position: absolute;
   left: 50%;
   top: 80px;
@@ -524,10 +524,13 @@ textarea {
   transition: 0.5s;
 }
 .card .card_content:hover {
-  border: solid 5px white;
-  border-radius: 8px;
-  transition: 1s;
+  transition: 0.5s;
+  color: black;
+  font-size: 100px;
   top: 20px;
+}
+.card .card_content:hover ~ img {
+  transform: scale(1.2);
 }
 
 @media only screen and (max-width: 576px) {
