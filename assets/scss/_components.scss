@@ -127,7 +127,7 @@ main {
 }
 
 .sec {
-    block-size: 100vh;
+    min-height: 100vh;
 }
 
 .slider {
@@ -223,7 +223,7 @@ main {
     .form_field {
         inline-size: 100%;
         padding: 10px;
-        margin: 5px;
+        margin: 5px 0;
         border-radius: 5px;
         outline: none;
         border: solid 2px $gray;
@@ -263,6 +263,7 @@ textarea {
 }
 
 .card {
+    margin: 5px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     border-radius: 10px;
     overflow: hidden;
@@ -282,7 +283,7 @@ textarea {
         top: 80px;
         transform: translateX(-50%);
         text-align: center;
-        z-index: 999;
+        z-index: 2;
         font-size: 50px;
         transition: .5s;
         &:hover {
@@ -295,6 +296,14 @@ textarea {
             }
         }
     }
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.justify-content-center {
+    justify-content: center;
 }
 
 @media only screen and (max-width: 576px) {
