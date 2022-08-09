@@ -1,2 +1,2 @@
 # web-pure
-## This is project for learning html css js without framework or library
+## Learning html css js without framework or library
